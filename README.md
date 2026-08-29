@@ -261,7 +261,11 @@ Distributed under the **MIT License**. See [`LICENSE`](LICENSE) for more informa
 
 <div align="center">
   <a href="https://openai.com/">
-    <img src="public/openai-logo.png" alt="OpenAI Logo" width="240" />
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="public/openai-logo-dark.png">
+      <source media="(prefers-color-scheme: light)" srcset="public/openai-logo-light.png">
+      <img src="public/openai-logo-light.png" alt="OpenAI Logo" width="240" />
+    </picture>
   </a>
   <br /><br />
   <p><em>Built with OpenAI Codex, GPT-5.6 Luna & GPT-5.6 Terra for Build What Moves India</em></p>

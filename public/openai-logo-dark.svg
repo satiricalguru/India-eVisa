@@ -1,13 +1,13 @@
 
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 650 180" width="650" height="180">
   <style>
-    .symbol { fill: #000000; }
+    .symbol { fill: #FFFFFF; }
     .wordmark {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       font-weight: 700;
       font-size: 104px;
       letter-spacing: -2px;
-      fill: #000000;
+      fill: #FFFFFF;
     }
   </style>
   <defs>
