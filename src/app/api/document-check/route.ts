@@ -1,9 +1,15 @@
 import OpenAI from "openai";
 
+export const dynamic = "force-static";
+
 type DocumentRequest = { kind?: "passport" | "photo"; fileName?: string; demo?: boolean; imageData?: string };
 const demoFeedback = { passport: ["Passport bio page is easy to read", "Photo and passport number are visible", "Ready to use in this demo"], photo: ["Face is centered and clearly visible", "Background looks plain enough", "Photo is ready to use in this demo"] };
 const maxImageDataLength = 6_000_000;
 const imageDataUrlPattern = /^data:image\/(?:jpeg|jpg|png|webp);base64,[a-z0-9+/=\s]+$/i;
+
+export async function GET() {
+  return Response.json({ status: "ok", model: "gpt-5.6-terra", supported: ["passport", "photo"] });
+}
 
 export async function POST(request: Request) {
   const contentLength = Number(request.headers.get("content-length") || 0);

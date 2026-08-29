@@ -241,27 +241,6 @@ Open **[http://localhost:3000](http://localhost:3000)** in your browser to exper
 
 ---
 
-## 🌐 Hosting via ChatGPT Sites & 1-Click Cloud
-
-### 1. ChatGPT Sites (OpenAI Web Publishing)
-This repository includes a standalone, zero-dependency bundle configured specifically for **ChatGPT Sites** (`chatgpt.com/sites`) and OpenAI Web Canvas:
-
-* **Bundle Location**: [`chatgpt-sites/index.html`](chatgpt-sites/index.html)
-* **To Host in ChatGPT**:
-  1. Open [ChatGPT](https://chatgpt.com/) (with Plus, Team, or Pro).
-  2. Upload or paste [`chatgpt-sites/index.html`](chatgpt-sites/index.html).
-  3. Prompt: *"Host and publish this interactive application on ChatGPT Sites."*
-
-### 2. Deploy to Vercel (Production)
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fsatiricalguru%2FIndia-eVisa)
-
-```bash
-# 1-command deployment with Vercel CLI
-npx vercel
-```
-
----
-
 ## 🏆 Hackathon Credits & Acknowledgements
 
 * **Hackathon**: [Build What Moves India](https://buildwhatmovesindia.com/)

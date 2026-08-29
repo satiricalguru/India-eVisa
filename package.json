@@ -1,10 +1,13 @@
 {
-  "name": "temp-app",
-  "version": "0.1.0",
+  "name": "india-evisa",
+  "version": "1.0.0",
   "private": true,
+  "homepage": "https://satiricalguru.github.io/India-eVisa",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:gh": "GITHUB_PAGES=true next build && cp India-eVisa-ETA-ETV-2026-98312.pdf out/ 2>/dev/null || true",
+    "deploy": "npm run build:gh && npx gh-pages -d out -t --nojekyll -m 'Deploy India-eVisa to GitHub Pages [skip ci]'",
     "start": "next start",
     "lint": "eslint"
   },
@@ -28,6 +31,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.3.3",
+    "gh-pages": "^6.3.0",
     "puppeteer-core": "^25.9.0",
     "tailwindcss": "^4",
     "typescript": "^5"
