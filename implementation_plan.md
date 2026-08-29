@@ -61,7 +61,7 @@ An exhaustive teardown of the current live portal reveals five core systemic fai
 │    (Required build tool)   │ • OpenAI Vision prompt pipelines written w/ AI │
 │                            │ • Screen-recorded Codex prompt session for demo│
 │                            ├────────────────────────────────────────────────┤
-│ 2. OpenAI Model Feature    │ • GPT-4o Vision API for instant passport/photo │
+│ 2. OpenAI Model Feature    │ • GPT-5.6 Terra Vision API for instant passport│
 │    (In-product AI)         │   pre-flight check & OCR auto-population       │
 │                            ├────────────────────────────────────────────────┤
 │ 3. Off-List Platform       │ • e-Tourist Visa (Public Service Redesign)     │

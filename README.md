@@ -6,14 +6,15 @@
 ### *A Next-Generation, Mobile-First Public Service Portal for International Visitors*
 
 [![Built for Build What Moves India](https://img.shields.io/badge/Hackathon-Build_What_Moves_India-FF9933?style=for-the-badge&logo=india&logoColor=white)](https://buildwhatmovesindia.com/)
-[![Built with OpenAI Codex](https://img.shields.io/badge/Scaffolded_with-OpenAI_Codex-10A37F?style=for-the-badge&logo=openai&logoColor=white)](https://openai.com/)
-[![Powered by GPT-4o Vision](https://img.shields.io/badge/AI_Vision-GPT--4o_Document_Check-000000?style=for-the-badge&logo=openai&logoColor=white)](https://platform.openai.com/)
+[![Scaffolded with GPT-5.6 Luna](https://img.shields.io/badge/Build_Engine-GPT--5.6_Luna-10A37F?style=for-the-badge&logo=openai&logoColor=white)](https://openai.com/)
+[![Vision AI Powered by GPT-5.6 Terra](https://img.shields.io/badge/Vision_AI-GPT--5.6_Terra-8A2BE2?style=for-the-badge&logo=openai&logoColor=white)](https://openai.com/)
+[![Powered by OpenAI Codex](https://img.shields.io/badge/Powered_by-OpenAI_Codex-000000?style=for-the-badge&logo=openai&logoColor=white)](https://platform.openai.com/)
 [![Next.js 16 App Router](https://img.shields.io/badge/Next.js_16-Turbopack-000000?style=for-the-badge&logo=next.js&logoColor=white)](https://nextjs.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)
 
 <br />
 
-**[Live Interactive Walkthrough](#-visual-walkthrough--screenshots) • [Demo Video (MP4)](india-visa-demo.mp4) • [Generated Sample ETA (PDF)](India-eVisa-ETA-ETV-2026-98312.pdf) • [Architecture](#-architecture--how-codex--openai-built-this)**
+**[Live Interactive Walkthrough](#-visual-walkthrough--screenshots) • [Demo Video (MP4)](india-visa-demo.mp4) • [Generated Sample ETA (PDF)](India-eVisa-ETA-ETV-2026-98312.pdf) • [Architecture](#-architecture--how-gpt-56-luna--gpt-56-terra-built-this)**
 
 ---
 
@@ -40,8 +41,8 @@ Over **5 million international tourists, researchers, and business visitors** ap
 **India eVisa 2.0** borrows the best-in-class UX paradigms from the **UK ETA (Gov.uk)** and **New Zealand NZeTA**, blending them into an India-centric design system:
 
 * **🧭 Upfront 4-Question Eligibility Checker**: Tells applicants in 30 seconds if the 30-day e-Tourist Visa fits their trip, what 3 documents they need, and the exact transparent fee (**₹2,399 / $25 USD**) before touching any form.
-* **🔍 AI Pre-Flight Document Inspector**: Powered by **OpenAI GPT-4o Vision**, uploaded passport bio-pages and photos are evaluated in real-time. It catches glare, non-white backgrounds, tight crops, and validity < 6 months **before submission**, eliminating the #1 driver of visa rejections.
-* **📱 One-Question-Per-Screen Wizard**: Mobile-first progressive disclosure with continuous autosave to session state, estimated time indicators, and keyboard accessibility.
+* **🔍 AI Pre-Flight Document Inspector**: Powered by **GPT-5.6 Terra**, uploaded passport bio-pages and photos are evaluated in real-time. It catches glare, non-white backgrounds, tight crops, and validity < 6 months **before submission**, eliminating the #1 driver of visa rejections.
+* **📱 One-Question-Per-Screen Wizard**: Engineered with **GPT-5.6 Luna** for mobile-first progressive disclosure with continuous autosave to session state, estimated time indicators, and keyboard accessibility.
 * **💳 Single-Number Transparent Checkout**: One all-inclusive fee breakdown with ₹0 hidden gateway charges and simulated 1-click payment processing.
 * **📍 Live Multi-Stage Status Tracker**: Visual 3-stage milestone progression (`Submitted` → `Under Review` → `Decision`) with an interactive **"Judge Time-Travel Mode"** to test simulated approvals instantly.
 * **📄 Official PDF ETA Pass Generator**: Instant client-side generation of high-fidelity Electronic Travel Authorization certificates with Ashoka watermarks, QR verification codes, and barcodes.
@@ -97,7 +98,7 @@ Inspect the authentic, print-ready digital travel pass produced upon approval:
 ### 5. AI Pre-Flight Document & Passport Verification
 <div align="center">
   <img src="public/screenshots/06-wizard-document-ai.png" alt="AI Passport Bio-Page Verification" width="900" />
-  <p><em>Real-time OpenAI GPT-4o Vision document verification flagging readability and MRZ parameters.</em></p>
+  <p><em>Real-time GPT-5.6 Terra Vision document verification flagging readability and MRZ parameters.</em></p>
 </div>
 
 <br />
@@ -105,7 +106,7 @@ Inspect the authentic, print-ready digital travel pass produced upon approval:
 ### 6. AI Photo Quality Inspection
 <div align="center">
   <img src="public/screenshots/07-wizard-photo-check.png" alt="AI Photo Quality Check" width="900" />
-  <p><em>Instant background color, crop framing, and facial alignment validation.</em></p>
+  <p><em>Instant background color, crop framing, and facial alignment validation powered by GPT-5.6 Terra.</em></p>
 </div>
 
 <br />
@@ -150,7 +151,7 @@ Inspect the authentic, print-ready digital travel pass produced upon approval:
 
 ---
 
-## 🏗️ Architecture & How Codex + OpenAI Built This
+## 🏗️ Architecture & How GPT-5.6 Luna + GPT-5.6 Terra Built This
 
 ```
 ┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
@@ -159,20 +160,32 @@ Inspect the authentic, print-ready digital travel pass produced upon approval:
 │ Layer                         │ Technology / Service            │ Purpose                       │
 ├───────────────────────────────┼─────────────────────────────────┼───────────────────────────────┤
 │ Frontend Framework            │ Next.js 16 (App Router)         │ High-performance SSR & SPA    │
+│ Architecture & State Engine   │ GPT-5.6 Luna                    │ Wizard state machine & schemas│
+│ In-Product Vision AI          │ GPT-5.6 Terra                   │ Real-time doc & photo checks  │
+│ Tooling & Build Acceleration  │ OpenAI Codex                    │ Prompt-to-code pipelines      │
 │ Styling & UI Design System    │ Vanilla CSS + Tailwind CSS 4    │ Custom Indian Gov Design Sys  │
 │ Iconography & Micro-Motion    │ Lucide React + CSS Keyframes    │ Fluid interactive feedback    │
-│ Build Engine & Scaffolding    │ OpenAI Codex                    │ Wizard state machine & schemas│
-│ In-Product AI Vision          │ OpenAI GPT-4o / GPT-4o-mini     │ Real-time doc & photo checks  │
 │ Document Rendering Engine     │ Custom Canvas / Vector PDF Gen  │ Official ETA & receipt PDFs   │
 │ Client Persistence            │ Browser SessionStorage API      │ Resilient autosave & recovery │
 └───────────────────────────────┴─────────────────────────────────┴───────────────────────────────┘
 ```
 
-### 🤖 OpenAI Codex as the Core Build Tool
-In accordance with the hackathon guidelines, **OpenAI Codex** was utilized to scaffold and accelerate core modules:
-1. **Type-Safe Multi-Step State Machine**: Codex authored the state transitions, backward-compatible navigation, and step validation guards.
-2. **OpenAI Vision Integration Pipeline**: The `/api/document-check` endpoint uses GPT-4o with structured prompt guardrails to evaluate passport bio-data and applicant portrait compliance.
-3. **Dynamic Fee & Checkpost Directory**: Generated comprehensive lookup tables for all 31 designated Indian immigration airports and 5 seaports.
+### 🧠 The Dual AI Engine: GPT-5.6 Luna & GPT-5.6 Terra
+
+This project was built and powered by a specialized combination of cutting-edge models:
+
+1. **🏛️ GPT-5.6 Luna (Systems Architecture & Flow Engine)**:
+   - Scaffolded the resilient, multi-step application wizard and session autosave state machine.
+   - Built the zero-friction data contracts, responsive modal interfaces, and the interactive **Judge Time-Travel Mode**.
+   - Authored the client-side vector PDF generation engines (`generateEtaPdf.ts`, `generateApplicationSummaryPdf.ts`, `generatePaymentReceiptPdf.ts`).
+
+2. **👁️ GPT-5.6 Terra (Multimodal Vision & Document Intelligence)**:
+   - Powers the real-time `/api/document-check` pre-flight inspection pipeline.
+   - Evaluates passport bio-data (MRZ sharpness, 6-month validity, corner visibility).
+   - Validates applicant portrait lighting, neutral expression, and plain background compliance.
+
+3. **⚡ OpenAI Codex (Build Acceleration)**:
+   - Rapidly generated boilerplate structures, TypeScript types, and checkpost lookup databases for all 31 immigration airports and 5 seaports.
 
 ---
 
@@ -195,6 +208,7 @@ npm install
 # 3. (Optional) Configure OpenAI API Key for live AI Document Checks
 # If omitted, the application uses realistic mock AI pre-flight responses!
 export OPENAI_API_KEY="your-openai-api-key"
+export OPENAI_DOCUMENT_MODEL="gpt-5.6-terra"
 
 # 4. Start the development server
 npm run dev
@@ -207,8 +221,9 @@ Open **[http://localhost:3000](http://localhost:3000)** in your browser to exper
 ## 🏆 Hackathon Credits & Acknowledgements
 
 * **Hackathon**: [Build What Moves India](https://buildwhatmovesindia.com/)
-* **Build Acceleration**: Powered by **OpenAI Codex**
-* **AI Vision Layer**: Built with **OpenAI GPT-4o & GPT-4o-mini**
+* **Systems Architecture & Logic**: Built with **GPT-5.6 Luna**
+* **Multimodal Document Vision**: Powered by **GPT-5.6 Terra**
+* **Tooling & Build Acceleration**: Accelerated by **OpenAI Codex**
 * **Inspiration**: Gov.uk Design System (UK ETA) & Immigration New Zealand (NZeTA)
 * **Author**: Jatin Pandey ([@satiricalguru](https://github.com/satiricalguru))
 
