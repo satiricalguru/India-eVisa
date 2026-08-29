@@ -7,7 +7,35 @@ if (!fs.existsSync(outDir)) {
   fs.mkdirSync(outDir, { recursive: true });
 }
 
+async function hideDevOverlays(page) {
+  await page.evaluate(() => {
+    const existing = document.getElementById('hide-dev-overlays-style');
+    if (!existing) {
+      const style = document.createElement('style');
+      style.id = 'hide-dev-overlays-style';
+      style.innerHTML = `
+        nextjs-portal, 
+        [data-nextjs-toast], 
+        [data-nextjs-dialog-overlay], 
+        #__next-build-watcher,
+        div[data-next-dev-tools],
+        [class*="devIndicator"],
+        [data-nextjs-dev-tools],
+        button[data-nextjs-dev-tools-button],
+        [aria-label*="Next.js"] { 
+          display: none !important; 
+          visibility: hidden !important; 
+          opacity: 0 !important;
+          pointer-events: none !important;
+        }
+      `;
+      document.head.appendChild(style);
+    }
+  });
+}
+
 async function clickButtonWithText(page, text) {
+  await hideDevOverlays(page);
   return page.evaluate((targetText) => {
     const buttons = Array.from(document.querySelectorAll('button, a'));
     const btn = buttons.find(b => b.textContent && b.textContent.toLowerCase().includes(targetText.toLowerCase()));
@@ -29,9 +57,10 @@ async function run() {
 
   const page = await browser.newPage();
   
-  console.log('Navigating to http://localhost:3000...');
+  console.log('Navigating to http://localhost:3000 in Production Mode...');
   await page.goto('http://localhost:3000', { waitUntil: 'networkidle0' });
   await new Promise(r => setTimeout(r, 1200));
+  await hideDevOverlays(page);
 
   // 1. Landing Hero
   console.log('Capturing 01-landing-hero.png...');
@@ -45,6 +74,7 @@ async function run() {
   console.log('Starting Eligibility...');
   await clickButtonWithText(page, 'Check my visa eligibility');
   await new Promise(r => setTimeout(r, 800));
+  await hideDevOverlays(page);
 
   console.log('Capturing 02-eligibility-checker.png...');
   await page.screenshot({ path: path.join(outDir, '02-eligibility-checker.png') });
@@ -64,6 +94,7 @@ async function run() {
   // Step 4 -> Result
   await clickButtonWithText(page, 'Continue');
   await new Promise(r => setTimeout(r, 1000));
+  await hideDevOverlays(page);
 
   // 3. Result Screen
   console.log('Capturing 03-eligibility-result.png...');
@@ -72,6 +103,7 @@ async function run() {
   // Start Application -> Login
   await clickButtonWithText(page, 'Start application');
   await new Promise(r => setTimeout(r, 800));
+  await hideDevOverlays(page);
 
   // 4. Demo Login
   console.log('Capturing 04-demo-login.png...');
@@ -84,6 +116,7 @@ async function run() {
   // Verify OTP
   await clickButtonWithText(page, 'Verify demo code');
   await new Promise(r => setTimeout(r, 1000));
+  await hideDevOverlays(page);
 
   // 5. Wizard Step 1: Personal Info
   console.log('Capturing 05-wizard-personal.png...');
@@ -96,6 +129,7 @@ async function run() {
   // Click 'Use a demo file instead'
   await clickButtonWithText(page, 'Use a demo file instead');
   await new Promise(r => setTimeout(r, 1500));
+  await hideDevOverlays(page);
 
   console.log('Capturing 06-wizard-document-ai.png...');
   await page.screenshot({ path: path.join(outDir, '06-wizard-document-ai.png') });
@@ -106,6 +140,7 @@ async function run() {
 
   await clickButtonWithText(page, 'Use a demo file instead');
   await new Promise(r => setTimeout(r, 1500));
+  await hideDevOverlays(page);
 
   console.log('Capturing 07-wizard-photo-check.png...');
   await page.screenshot({ path: path.join(outDir, '07-wizard-photo-check.png') });
@@ -121,6 +156,7 @@ async function run() {
   // Next to Review
   await clickButtonWithText(page, 'Review application');
   await new Promise(r => setTimeout(r, 1000));
+  await hideDevOverlays(page);
 
   // 8. Review Screen
   console.log('Capturing 08-review-summary.png...');
@@ -129,6 +165,7 @@ async function run() {
   // Continue to payment
   await clickButtonWithText(page, 'Continue to payment');
   await new Promise(r => setTimeout(r, 800));
+  await hideDevOverlays(page);
 
   // 9. Payment Screen
   console.log('Capturing 09-transparent-payment.png...');
@@ -137,6 +174,7 @@ async function run() {
   // Pay
   await clickButtonWithText(page, 'Pay ₹');
   await new Promise(r => setTimeout(r, 2000));
+  await hideDevOverlays(page);
 
   // 10. Live Tracking (Under Review)
   console.log('Capturing 10-live-tracking-under-review.png...');
@@ -145,6 +183,7 @@ async function run() {
   // Show mock approval
   await clickButtonWithText(page, 'Show mock approval');
   await new Promise(r => setTimeout(r, 1000));
+  await hideDevOverlays(page);
 
   // 11. Live Tracking (Approved)
   console.log('Capturing 11-live-tracking-approved.png...');
@@ -153,17 +192,19 @@ async function run() {
   // Also open modals on home screen for extra shots
   await clickButtonWithText(page, 'Return to home');
   await new Promise(r => setTimeout(r, 1000));
+  await hideDevOverlays(page);
 
   // Fee Calculator / Modals if any
   const feeCalc = await clickButtonWithText(page, 'Fee Calculator');
   if (feeCalc) {
     await new Promise(r => setTimeout(r, 600));
+    await hideDevOverlays(page);
     console.log('Capturing 12-fee-calculator-modal.png...');
     await page.screenshot({ path: path.join(outDir, '12-fee-calculator-modal.png') });
   }
 
   await browser.close();
-  console.log('All screenshots captured successfully in public/screenshots/ !');
+  console.log('Clean production screenshots captured successfully with zero overlays!');
 }
 
 run().catch(console.error);
