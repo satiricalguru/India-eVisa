@@ -5,6 +5,7 @@
 # 🇮🇳 India eVisa 2.0 (भारत ई-वीजा)
 ### *A Next-Generation, Mobile-First Public Service Portal for International Visitors*
 
+[![Live Demo on GitHub Pages](https://img.shields.io/badge/Live_Demo-GitHub_Pages-2ea44f?style=for-the-badge&logo=github&logoColor=white)](https://satiricalguru.github.io/India-eVisa/)
 [![Built for Build What Moves India](https://img.shields.io/badge/Hackathon-Build_What_Moves_India-FF9933?style=for-the-badge&logo=india&logoColor=white)](https://buildwhatmovesindia.com/)
 [![Scaffolded with GPT-5.6 Luna](https://img.shields.io/badge/Build_Engine-GPT--5.6_Luna-10A37F?style=for-the-badge&logo=openai&logoColor=white)](https://openai.com/)
 [![Vision AI Powered by GPT-5.6 Terra](https://img.shields.io/badge/Vision_AI-GPT--5.6_Terra-8A2BE2?style=for-the-badge&logo=openai&logoColor=white)](https://openai.com/)
@@ -14,7 +15,7 @@
 
 <br />
 
-**[Watch Demo Video](#-interactive-demo-video) • [Official Generated ETA Pass (PDF)](#-official-generated-eta-visa-pass) • [Visual Walkthrough Grid](#-application-walkthrough--screenshot-grid) • [Architecture](#-architecture--how-gpt-56-luna--gpt-56-terra-built-this)**
+**[🌐 Launch Live Web App](https://satiricalguru.github.io/India-eVisa/) • [Watch Demo Video](#-interactive-demo-video) • [Official Generated ETA Pass (PDF)](#-official-generated-eta-visa-pass) • [Visual Walkthrough Grid](#-application-walkthrough--screenshot-grid) • [Architecture](#-architecture--how-gpt-56-luna--gpt-56-terra-built-this)**
 
 ---
 
