@@ -49,18 +49,17 @@ Over **5 million international tourists, researchers, and business visitors** ap
 
 ---
 
-## 🎥 Interactive Demo Video
+## 🎥 Interactive Demo Video & Live Walkthrough
 
-Watch the complete end-to-end applicant journey in action:
-
-https://github.com/satiricalguru/India-eVisa/raw/main/india-visa-demo.mp4
+Experience the complete end-to-end applicant journey in action (instant eligibility check, real-time AI document inspection, 1-click OTP login, transparent fee checkout, and instant ETA issuance):
 
 <div align="center">
-  <video src="https://github.com/satiricalguru/India-eVisa/raw/main/india-visa-demo.mp4" controls width="100%" style="max-width: 860px; border-radius: 12px; box-shadow: 0 12px 36px rgba(0,0,0,0.18);">
-    <p>Your browser does not support embedded videos. <a href="https://github.com/satiricalguru/India-eVisa/raw/main/india-visa-demo.mp4"><strong>Click here to play / download india-visa-demo.mp4</strong></a>.</p>
-  </video>
+  <a href="india-visa-demo.mp4">
+    <img src="public/demo-walkthrough.gif" alt="India eVisa 2.0 Complete Demo Walkthrough" width="900" style="border-radius: 10px; box-shadow: 0 12px 36px rgba(0,0,0,0.18); border: 1px solid rgba(255,255,255,0.1);" />
+  </a>
   <br /><br />
-  <a href="india-visa-demo.mp4"><img src="https://img.shields.io/badge/Download_Demo_Video-MP4_(2.0_MB)-FF9933?style=for-the-badge&logo=quicktime&logoColor=white" alt="Download Demo Video" /></a>
+  <p><em>Continuous live demonstration of the complete India eVisa 2.0 workflow.</em></p>
+  <a href="india-visa-demo.mp4"><img src="https://img.shields.io/badge/Download_High--Res_Video-MP4_(2.0_MB)-FF9933?style=for-the-badge&logo=quicktime&logoColor=white" alt="Download Demo Video" /></a>
   &nbsp;&nbsp;
   <a href="India-eVisa-ETA-ETV-2026-98312.pdf"><img src="https://img.shields.io/badge/Download_Sample-ETA_Certificate_(PDF)-10A37F?style=for-the-badge&logo=adobeacrobatreader&logoColor=white" alt="Download Sample PDF" /></a>
 </div>
