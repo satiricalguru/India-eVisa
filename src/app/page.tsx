@@ -41,7 +41,7 @@ const defaultProfile: UserProfile = {
 };
 
 const initialEligibility: EligibilityData = { passport: "United Kingdom", purpose: "Tourism", arrival: "2026-10-15", duration: "12 days" };
-const initialForm: FormData = { fullName: "Alex Morgan", gender: "Female", dob: "1992-05-14", stay: "The Park, New Delhi", email: "alex.morgan@example.com", phone: "+44 7700 900 123", passportNumber: "542617843" };
+const initialForm: FormData = { fullName: "", gender: "", dob: "", stay: "", email: "", phone: "", passportNumber: "" };
 const wizardSteps = [{ label: "About you", eyebrow: "01" }, { label: "Passport", eyebrow: "02" }, { label: "Photo", eyebrow: "03" }, { label: "Your trip", eyebrow: "04" }, { label: "Contact", eyebrow: "05" }];
 const countries = eligibleCountriesList;
 
@@ -1126,7 +1126,7 @@ export default function Home() {
   const [helpOpen, setHelpOpen] = useState(false);
   const [profileOpen, setProfileOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(true);
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
   const [loginReturnScreen, setLoginReturnScreen] = useState<"home" | "result">("result");
   const [profile, setProfile] = useState<UserProfile>(defaultProfile);
 
@@ -1192,11 +1192,28 @@ export default function Home() {
   const handleLogout = () => {
     setIsLoggedIn(false);
     setProfileOpen(false);
+    setForm({ fullName: "", gender: "", dob: "", stay: "", email: "", phone: "", passportNumber: "" });
+    setDocs({});
+    try {
+      window.sessionStorage.removeItem("india-visa-demo");
+    } catch {
+      // ignore
+    }
   };
 
   const handleLogin = (userEmail: string) => {
     setIsLoggedIn(true);
     setProfile((prev) => ({ ...prev, email: userEmail || prev.email }));
+    setForm((prev) => ({
+      ...prev,
+      fullName: defaultProfile.fullName,
+      gender: defaultProfile.gender,
+      dob: defaultProfile.dob,
+      passportNumber: defaultProfile.passportNumber,
+      stay: defaultProfile.stay,
+      email: userEmail || defaultProfile.email,
+      phone: defaultProfile.phone,
+    }));
   };
 
   const handleAccountClick = () => {
