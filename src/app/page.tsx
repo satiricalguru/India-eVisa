@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import ashokaEmblemImg from "../../public/ashoka-emblem.png";
+import emblemImg from "../../public/emblem.png";
 import { generateEtaPdf } from "./utils/generateEtaPdf";
 import { generateApplicationSummaryPdf } from "./utils/generateApplicationSummaryPdf";
 import { eligibleCountriesList, getCountryFeeConfig } from "./data/countriesFeeData";
@@ -571,7 +573,7 @@ function SiteFooter({
         <div className="footer-mid-brand">
           <div className="footer-emblem-cluster">
             <Image
-              src="/ashoka-emblem.png"
+              src={ashokaEmblemImg}
               alt="State Emblem of India - Lion Capital of Ashoka"
               width={38}
               height={56}
@@ -651,7 +653,7 @@ function Shell({
         <button className="brand" onClick={onHome} aria-label="Go to India e-Visa home">
           <span className="brand-mark">
             <Image
-              src="/emblem.png"
+              src={emblemImg}
               alt="Emblem of India"
               width={24}
               height={40}
